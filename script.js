@@ -1,4 +1,4 @@
-// مصفوفة الصور
+// مصفوفة الصور (بقية الروابط كما هي)
 const images = [
     "https://image2url.com/r2/default/images/1775641754625-4ca94b10-61af-4397-aa47-c4bb708a6b0f.jpg",
     "https://image2url.com/r2/default/images/1775641928762-79e00e64-77d7-45bc-ab97-aeba517c7ac4.jpg",
@@ -44,27 +44,28 @@ const videos = [
     "https://streamtape.com/v/xvMRLJgQ7yukKb1", "https://streamtape.com/v/3ro1gmO684Ude8g", "https://streamtape.com/v/3DjgxyOKpPSdYRo"
 ];
 
-// مصفوفة الأوصاف المختلفة
 const descriptions = [
     "مقطع حصري تم تسريبه اليوم، شاهد قبل الحذف 🎥",
     "أقوى إطلالة لعام 2026، جودة 4K حقيقية 💎",
     "سهرة خاصة من قلب دبي، لا تفوت التفاصيل 🔥",
     "فيديو تفاعلي جديد، اضغط للمشاهدة الآن 💄",
     "محتوى VIP للمشتركين فقط، استمتع بالعرض 👠",
-    "جلسة تصوير خلف الكواليس، محتوى لن تراه في أي مكان 🌟",
+    "جلسة تصوير خلف الكواليس، محتوى حصري 🌟",
     "ترند التيك توك المسرب، شاهد الحقيقة كاملة 💋",
     "إصدار خاص وحصري لمنصة OnlySecrets فقط 🔞"
 ];
 
 const titles = ['مصرية VIP 🔥', 'سورية مثيرة HD', 'سعودية ترند 2026', 'لبنانية مغرية 🎥', 'مغربية حصري 💋', 'خليجية نار 🌶️'];
-const POP_UNDER_URL = "https://your-juicyads-link.com"; // رابط إعلانك
+
+// رابط إعلان الـ PopUnder المباشر الخاص بك من JuicyAds
+const AD_URL = "https://www.juicyads.rocks/click.php?c=446433w2q284u4r2p2a4y2e414";
 
 function initApp() {
     const grid = document.getElementById('mainGrid');
     images.forEach((imgSrc, index) => {
         const title = titles[index % titles.length];
         const videoLink = videos[index % videos.length] || videos[0];
-        const desc = descriptions[index % descriptions.length]; // توزيع الأوصاف بشكل دوري
+        const desc = descriptions[index % descriptions.length];
 
         const card = document.createElement('div');
         card.className = 'video-card';
@@ -85,15 +86,17 @@ function initApp() {
     });
 }
 
-let adClicked = false;
+// دالة التحكم الذكي: تفتح الإعلان في ضغطة والفيديو في ضغطة
+let adCounter = 0;
 function handleAction(videoUrl) {
-    if (!adClicked) {
-        window.open(POP_UNDER_URL, '_blank');
-        adClicked = true;
+    if (adCounter % 2 === 0) {
+        // الضغطة الأولى تفتح الإعلان في نافذة جديدة
+        window.open(AD_URL, '_blank');
     } else {
+        // الضغطة الثانية تفتح رابط الفيديو
         window.open(videoUrl, '_blank');
-        adClicked = false;
     }
+    adCounter++;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -104,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function spawnChat() {
     const chat = document.createElement('div');
     chat.className = 'neon-chat';
-    chat.onclick = () => window.open(POP_UNDER_URL, '_blank');
+    chat.onclick = () => window.open(AD_URL, '_blank');
     chat.innerHTML = `
         <div class="chat-user">
             <img src="https://i.pravatar.cc/100?img=32">
