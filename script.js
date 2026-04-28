@@ -1,4 +1,4 @@
-// مصفوفة الصور
+// 1. مصفوفة الصور (صور البنات المستخدمة في الموقع والإشعارات)
 const images = [
     "https://image2url.com/r2/default/images/1775641754625-4ca94b10-61af-4397-aa47-c4bb708a6b0f.jpg",
     "https://image2url.com/r2/default/images/1775641928762-79e00e64-77d7-45bc-ab97-aeba517c7ac4.jpg",
@@ -26,59 +26,33 @@ const images = [
     "https://i.ibb.co/KjJhr1D8/IMG-20260427-181700-953.jpg", "https://i.ibb.co/7JjPHGWP/IMG-20260427-181645-569.jpg"
 ];
 
-// مصفوفة الفيديوهات
-const videos = [
-    "https://streamtape.com/v/9yZow42rORta2B0", "https://streamtape.com/v/OW0bOMgjWGTZdlL", "https://streamtape.com/v/MxLKOyrBK1FmkKQ",
-    "https://streamtape.com/v/8OLw7GX31biXwM", "https://streamtape.com/v/JY40g24vlmijWd6", "https://streamtape.com/v/DZQXxyR291skg18",
-    "https://streamtape.com/v/l0qRVGaPZOc7ggV", "https://streamtape.com/v/6wavDpkozQS98eb", "https://streamtape.com/v/9eeMvPY9mpuyYP",
-    "https://streamtape.com/v/BqOkOVjQ6oTy1dd", "https://streamtape.com/v/Pb0xoqjmglTWw1", "https://streamtape.com/v/X11dMd04qPsDMvD",
-    "https://streamtape.com/v/MoVJ0Ya4RPhwg9", "https://streamtape.com/v/DXYpJRrlAafAqX", "https://streamtape.com/v/oLmk1Lk7KpHJV16",
-    "https://streamtape.com/v/OWpZ0x4zjAIZdBm", "https://streamtape.com/v/6W8OqLrx1KFVZV", "https://streamtape.com/v/mOyk9GOl3VTkL3",
-    "https://streamtape.com/v/DWVBXKJRPQck7lK", "https://streamtape.com/v/4Ww3YbJrlMSKYxg", "https://streamtape.com/v/WyXmQDm7zyTbw2w",
-    "https://streamtape.com/v/JKGQzajRYzfZYk", "https://streamtape.com/v/Aw1Yq0xzL2CX6d3", "https://streamtape.com/v/41GxXpAxgQuyWx",
-    "https://streamtape.com/v/Xjo8OaZ8gjIBg0", "https://streamtape.com/v/J2aDOWDLzWCjzaZ", "https://streamtape.com/v/BAKXgPKpPyHybdO",
-    "https://streamtape.com/v/m91xQ4D0J8tbbMp", "https://streamtape.com/v/6pom6LRRl9ivaB", "https://streamtape.com/v/PxRyGW4KGPH0qKl",
-    "https://streamtape.com/v/xbLGqLb8Lxik4Dy", "https://streamtape.com/v/1Jxkz3ZJ0vFb1w", "https://streamtape.com/v/DoorjrxJk2cLeY",
-    "https://streamtape.com/v/1pJXOwva7MsdPJ", "https://streamtape.com/v/OabeeojjOdcG7y", "https://streamtape.com/v/gaj7K6y4ZJFg1M",
-    "https://streamtape.com/v/QPkgqjLqb4s0l1b", "https://streamtape.com/v/dVB107Rk86ckOQD", "https://streamtape.com/v/b78R4RGbjduPAPX",
-    "https://streamtape.com/v/xvMRLJgQ7yukKb1", "https://streamtape.com/v/3ro1gmO684Ude8g", "https://streamtape.com/v/3DjgxyOKpPSdYRo"
-];
-
-const descriptions = [
-    "مقطع حصري تم تسريبه اليوم، شاهد قبل الحذف 🎥",
-    "أقوى إطلالة لعام 2026، جودة 4K حقيقية 💎",
-    "سهرة خاصة من قلب دبي، لا تفوت التفاصيل 🔥",
-    "فيديو تفاعلي جديد، اضغط للمشاهدة الآن 💄",
-    "محتوى VIP للمشتركين فقط، استمتع بالعرض 👠",
-    "جلسة تصوير خلف الكواليس، محتوى حصري 🌟",
-    "ترند التيك توك المسرب، شاهد الحقيقة كاملة 💋",
-    "إصدار خاص وحصري لمنصة OnlySecrets فقط 🔞"
-];
-
+// 2. مصفوفات البيانات والروابط
+const videos = ["https://streamtape.com/v/9yZow42rORta2B0", "https://streamtape.com/v/OW0bOMgjWGTZdlL", "https://streamtape.com/v/MxLKOyrBK1FmkKQ", "https://streamtape.com/v/8OLw7GX31biXwM", "https://streamtape.com/v/JY40g24vlmijWd6", "https://streamtape.com/v/DZQXxyR291skg18", "https://streamtape.com/v/l0qRVGaPZOc7ggV", "https://streamtape.com/v/6wavDpkozQS98eb", "https://streamtape.com/v/9eeMvPY9mpuyYP", "https://streamtape.com/v/BqOkOVjQ6oTy1dd", "https://streamtape.com/v/Pb0xoqjmglTWw1", "https://streamtape.com/v/X11dMd04qPsDMvD", "https://streamtape.com/v/MoVJ0Ya4RPhwg9", "https://streamtape.com/v/DXYpJRrlAafAqX", "https://streamtape.com/v/oLmk1Lk7KpHJV16", "https://streamtape.com/v/OWpZ0x4zjAIZdBm", "https://streamtape.com/v/6W8OqLrx1KFVZV", "https://streamtape.com/v/mOyk9GOl3VTkL3", "https://streamtape.com/v/DWVBXKJRPQck7lK", "https://streamtape.com/v/4Ww3YbJrlMSKYxg", "https://streamtape.com/v/WyXmQDm7zyTbw2w", "https://streamtape.com/v/JKGQzajRYzfZYk", "https://streamtape.com/v/Aw1Yq0xzL2CX6d3", "https://streamtape.com/v/41GxXpAxgQuyWx", "https://streamtape.com/v/Xjo8OaZ8gjIBg0", "https://streamtape.com/v/J2aDOWDLzWCjzaZ", "https://streamtape.com/v/BAKXgPKpPyHybdO", "https://streamtape.com/v/m91xQ4D0J8tbbMp", "https://streamtape.com/v/6pom6LRRl9ivaB", "https://streamtape.com/v/PxRyGW4KGPH0qKl", "https://streamtape.com/v/xbLGqLb8Lxik4Dy", "https://streamtape.com/v/1Jxkz3ZJ0vFb1w", "https://streamtape.com/v/DoorjrxJk2cLeY", "https://streamtape.com/v/1pJXOwva7MsdPJ", "https://streamtape.com/v/OabeeojjOdcG7y", "https://streamtape.com/v/gaj7K6y4ZJFg1M", "https://streamtape.com/v/QPkgqjLqb4s0l1b", "https://streamtape.com/v/dVB107Rk86ckOQD", "https://streamtape.com/v/b78R4RGbjduPAPX", "https://streamtape.com/v/xvMRLJgQ7yukKb1", "https://streamtape.com/v/3ro1gmO684Ude8g", "https://streamtape.com/v/3DjgxyOKpPSdYRo"];
+const descriptions = ["مقطع حصري تم تسريبه اليوم، شاهد قبل الحذف 🎥", "أقوى إطلالة لعام 2026، جودة 4K حقيقية 💎", "سهرة خاصة من قلب دبي، لا تفوت التفاصيل 🔥", "فيديو تفاعلي جديد، اضغط للمشاهدة الآن 💄", "محتوى VIP للمشتركين فقط، استمتع بالعرض 👠", "جلسة تصوير خلف الكواليس، محتوى حصري 🌟", "ترند التيك توك المسرب، شاهد الحقيقة كاملة 💋", "إصدار خاص وحصري لمنصة OnlySecrets فقط 🔞"];
 const titles = ['مصرية VIP 🔥', 'سورية مثيرة HD', 'سعودية ترند 2026', 'لبنانية مغرية 🎥', 'مغربية حصري 💋', 'خليجية نار 🌶️'];
+const fakeUsers = ["Noor", "Lama", "Saly", "Mona", "Jana", "Rim"];
+const actions = ["أضافت فيديو حصري جديد 🔞", "فتحت البرايفيت الآن 🔥", "تنتظر اتصالك في الدردشة 📞", "قامت بتحديث ملفها الشخصي ✨"];
 
-// رابط إعلان الـ PopUnder المباشر الخاص بك من JuicyAds لضمان أقصى ربح
+// رابط الـ Direct Link الصحيح لضمان فتح الإعلان بدلاً من الكود
 const AD_URL = "https://www.juicyads.rocks/click.php?c=446433w2q284u4r2p2a4y2e414";
-
-// كائن (Object) لتتبع النقرات لكل خانة بشكل مستقل تماماً
 const cardTrackers = {};
 
+// 3. تهيئة التطبيق وعرض الفيديوهات
 function initApp() {
     const grid = document.getElementById('mainGrid');
+    if(!grid) return;
     images.forEach((imgSrc, index) => {
         const title = titles[index % titles.length];
         const videoLink = videos[index % videos.length] || videos[0];
         const desc = descriptions[index % descriptions.length];
-        const cardId = `card-${index}`; // معرف فريد لكل خانة
-
-        // تهيئة العداد لكل خانة عند التشغيل
+        const cardId = `card-${index}`;
         cardTrackers[cardId] = 0;
 
         const card = document.createElement('div');
         card.className = 'video-card';
         card.innerHTML = `
             <div class="thumb-box" onclick="handleSmartAction('${cardId}', '${videoLink}')">
-                <img src="${imgSrc}" loading="lazy">
+                <img src="${imgSrc}" loading="lazy" style="object-fit: cover;">
                 <div class="play-overlay"><i class="fas fa-play-circle"></i></div>
             </div>
             <div class="card-content">
@@ -93,38 +67,82 @@ function initApp() {
     });
 }
 
-// دالة التحكم الذكي: تجبر الزائر على فتح إعلان "لكل خانة" بشكل منفصل
+// التحكم الذكي في النقرات (مرة إعلان ومرة فيديو) لكل خانة
 function handleSmartAction(id, videoUrl) {
     if (cardTrackers[id] % 2 === 0) {
-        // إذا كانت النقرة الأولى على "هذه الخانة تحديداً" -> افتح إعلان
         window.open(AD_URL, '_blank');
     } else {
-        // إذا كانت النقرة الثانية على "نفس الخانة" -> افتح الفيديو
         window.open(videoUrl, '_blank');
     }
-    // زيادة العداد الخاص بهذه الخانة فقط لضمان تكرار العملية مع بقية الخانات
     cardTrackers[id]++;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    initApp();
-    setTimeout(spawnChat, 4000);
-});
+// 4. نظام الإشعارات الوهمية المحدث بـ (صور البنات)
+function showFakeNotification() {
+    const user = fakeUsers[Math.floor(Math.random() * fakeUsers.length)];
+    const action = actions[Math.floor(Math.random() * actions.length)];
+    
+    // اختيار صورة بنت عشوائية من مصفوفة الصور الخاصة بك
+    const randomGirlImg = images[Math.floor(Math.random() * images.length)];
 
+    const notify = document.createElement('div');
+    notify.style.cssText = `
+        position: fixed; top: 20px; right: -350px; background: rgba(15, 15, 15, 0.98);
+        color: white; padding: 15px; border-radius: 12px; border-right: 4px solid #00f3ff;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.8); display: flex; align-items: center;
+        gap: 12px; z-index: 100000; transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        font-family: 'Tajawal', sans-serif; cursor: pointer; width: 280px; direction: rtl;
+    `;
+    notify.innerHTML = `
+        <div style="position:relative">
+            <img src="${randomGirlImg}" style="width:45px; height:45px; border-radius:50%; border:2px solid #ff0055; object-fit: cover;">
+            <div style="position:absolute; bottom:0; right:0; width:12px; height:12px; background:#00ff00; border-radius:50%; border:2px solid #000;"></div>
+        </div>
+        <div style="text-align:right">
+            <div style="font-weight:bold; font-size:14px; color:#00f3ff">${user} ✅</div>
+            <div style="font-size:12px; color:#ddd">${action}</div>
+        </div>
+    `;
+    notify.onclick = (e) => {
+        e.stopPropagation();
+        window.open(AD_URL, '_blank');
+    };
+    document.body.appendChild(notify);
+    setTimeout(() => { notify.style.right = '20px'; }, 500);
+    setTimeout(() => {
+        notify.style.right = '-400px';
+        setTimeout(() => notify.remove(), 1000);
+    }, 6000);
+}
+
+// 5. الشات النيون المحدث بصورة احترافية
 function spawnChat() {
     const chat = document.createElement('div');
     chat.className = 'neon-chat';
-    // الشات يفتح دائماً إعلان لزيادة الربح
     chat.onclick = () => window.open(AD_URL, '_blank');
+    
+    // اختيار صورة مميزة لـ "Sonia" من المصفوفة
+    const soniaImg = images[4]; 
+
     chat.innerHTML = `
         <div class="chat-user">
-            <img src="https://i.pravatar.cc/100?img=32">
+            <img src="${soniaImg}" style="width:45px; height:45px; border-radius:50%; object-fit: cover; border: 2px solid #00f3ff;">
             <div style="text-align:right">
                 <div style="font-weight:700; font-size:15px; color:#00f3ff">Sonia Secret <i class="fas fa-check-circle"></i></div>
                 <div style="font-size:11px; color:#00ff00;">متصلة الآن</div>
             </div>
         </div>
-        <div style="padding:15px; font-size:14px; text-align:right;">أهلين يا بطل.. حابب تشوف حصريات اليوم؟ 😉🔥</div>
+        <div style="padding:15px; font-size:14px; text-align:right; color: #fff;">أهلين يا بطل.. حابب تشوف حصريات اليوم؟ 😉🔥</div>
     `;
     document.body.appendChild(chat);
 }
+
+// تشغيل الوظائف عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', () => {
+    initApp();
+    setTimeout(spawnChat, 4000); // ظهور الشات بعد 4 ثواني
+    setTimeout(() => {
+        showFakeNotification();
+        setInterval(showFakeNotification, 20000); // تكرار الإشعار كل 20 ثانية
+    }, 6000);
+});
