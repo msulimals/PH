@@ -13,6 +13,23 @@ body { background: var(--bg-black); color: #fff; font-family: 'Tajawal', sans-se
 .neon-header h1 { font-size: 38px; font-weight: 800; color: #fff; }
 .neon-header h1 span { color: var(--neon-blue); text-shadow: 0 0 15px var(--neon-blue); }
 
+/* تنسيق حاوية الإعلان العلوي */
+.ad-container-top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    background: #000;
+}
+.ad-wrapper {
+    max-width: 100%;
+    overflow: hidden;
+    border: 1px solid #333;
+    border-radius: 12px;
+    background: #0a0a0a;
+}
+
 /* الشبكة لتناسب الصور الطولية */
 .video-grid { 
     display: grid; 
@@ -24,50 +41,23 @@ body { background: var(--bg-black); color: #fff; font-family: 'Tajawal', sans-se
 .video-card { background: var(--card-bg); border-radius: 20px; border: 1px solid #222; overflow: hidden; transition: 0.4s ease-in-out; position: relative; }
 .video-card:hover { border-color: var(--neon-blue); box-shadow: 0 0 25px var(--neon-blue); transform: translateY(-10px); }
 
-/* صندوق الصورة الطولي والتغبيش */
-.thumb-box { 
-    width: 100%; 
-    height: 450px; 
-    position: relative; 
-    overflow: hidden; 
-    cursor: pointer; 
-    background: #000;
-}
+.thumb-box { width: 100%; height: 450px; position: relative; overflow: hidden; cursor: pointer; background: #000; }
+.thumb-box img { width: 100%; height: 100%; object-fit: cover; filter: blur(45px); transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+.video-card:hover .thumb-box img { filter: blur(0px) brightness(1.1); transform: scale(1.08); }
 
-.thumb-box img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    filter: blur(45px); /* تغبيش قوي جداً */
-    transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* حركة إزالة التغبيش السحرية */
-.video-card:hover .thumb-box img { 
-    filter: blur(0px) brightness(1.1); /* ينشال التغبيش 100% وتضوي الصورة */
-    transform: scale(1.08); 
-}
-
-/* زر التشغيل الكبير بالمنتصف */
-.play-overlay { 
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
-    font-size: 85px; color: rgba(255, 255, 255, 0.8); transition: 0.4s; z-index: 5;
-    pointer-events: none;
-}
-.video-card:hover .play-overlay { color: var(--neon-blue); transform: translate(-50%, -50%) scale(1.2); text-shadow: 0 0 20px var(--neon-blue); opacity: 1; }
+.play-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 85px; color: rgba(255, 255, 255, 0.8); transition: 0.4s; z-index: 5; pointer-events: none; }
+.video-card:hover .play-overlay { color: var(--neon-blue); transform: translate(-50%, -50%) scale(1.2); text-shadow: 0 0 20px var(--neon-blue); }
 
 .card-content { padding: 20px; text-align: right; }
 .card-content h3 { color: var(--neon-blue); font-size: 20px; font-weight: 700; margin-bottom: 5px; }
 
-/* زر المشاهدة العبقري المتوهج */
 .watch-btn {
     display: block; width: 100%; padding: 15px; margin-top: 15px;
     background: linear-gradient(-45deg, #ff0055, #00f3ff, #ff0055, #00f3ff);
     background-size: 400% 400%;
     animation: gradientBG 5s ease infinite, pulseGlow 2s infinite;
-    color: #fff; text-align: center; text-decoration: none; border-radius: 15px;
-    font-weight: 800; font-size: 17px; transition: 0.4s; cursor: pointer; border: none;
-    font-family: 'Tajawal';
+    color: #fff; text-align: center; border-radius: 15px;
+    font-weight: 800; font-size: 17px; transition: 0.4s; cursor: pointer; border: none; font-family: 'Tajawal';
 }
 
 @keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
@@ -77,3 +67,32 @@ body { background: var(--bg-black); color: #fff; font-family: 'Tajawal', sans-se
 .neon-chat { position: fixed; bottom: 30px; left: 30px; width: 290px; background: rgba(10,10,10,0.95); border: 1px solid var(--neon-pink); border-radius: 15px; box-shadow: 0 0 25px var(--neon-pink); z-index: 9999; cursor: pointer; }
 .chat-user { display: flex; align-items: center; padding: 12px; border-bottom: 1px solid #222; }
 .chat-user img { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--neon-blue); margin-left: 12px; }
+
+@media (max-width: 900px) {
+    .ad-wrapper { transform: scale(0.85); }
+    .video-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); padding: 15px; }
+/* تنسيق منطقة البانر */
+.banner-area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    background: #000;
+}
+
+.ad-box {
+    max-width: 100%;
+    overflow: hidden;
+    border: 1px solid #1a1a1a;
+    border-radius: 10px;
+    background: #080808;
+}
+
+/* تحسين الظهور على الموبايل */
+@media (max-width: 900px) {
+    .ad-box {
+        transform: scale(0.8);
+        margin: -10px 0;
+    }
+}
+}
