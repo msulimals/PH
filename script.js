@@ -1,4 +1,4 @@
-// مصفوفة الصور (بقية الروابط كما هي)
+// مصفوفة الصور
 const images = [
     "https://image2url.com/r2/default/images/1775641754625-4ca94b10-61af-4397-aa47-c4bb708a6b0f.jpg",
     "https://image2url.com/r2/default/images/1775641928762-79e00e64-77d7-45bc-ab97-aeba517c7ac4.jpg",
@@ -57,8 +57,11 @@ const descriptions = [
 
 const titles = ['مصرية VIP 🔥', 'سورية مثيرة HD', 'سعودية ترند 2026', 'لبنانية مغرية 🎥', 'مغربية حصري 💋', 'خليجية نار 🌶️'];
 
-// رابط إعلان الـ PopUnder المباشر الخاص بك من JuicyAds
+// رابط إعلان الـ PopUnder المباشر الخاص بك من JuicyAds لضمان أقصى ربح
 const AD_URL = "https://www.juicyads.rocks/click.php?c=446433w2q284u4r2p2a4y2e414";
+
+// كائن (Object) لتتبع النقرات لكل خانة بشكل مستقل تماماً
+const cardTrackers = {};
 
 function initApp() {
     const grid = document.getElementById('mainGrid');
@@ -66,18 +69,22 @@ function initApp() {
         const title = titles[index % titles.length];
         const videoLink = videos[index % videos.length] || videos[0];
         const desc = descriptions[index % descriptions.length];
+        const cardId = `card-${index}`; // معرف فريد لكل خانة
+
+        // تهيئة العداد لكل خانة عند التشغيل
+        cardTrackers[cardId] = 0;
 
         const card = document.createElement('div');
         card.className = 'video-card';
         card.innerHTML = `
-            <div class="thumb-box" onclick="handleAction('${videoLink}')">
+            <div class="thumb-box" onclick="handleSmartAction('${cardId}', '${videoLink}')">
                 <img src="${imgSrc}" loading="lazy">
                 <div class="play-overlay"><i class="fas fa-play-circle"></i></div>
             </div>
             <div class="card-content">
                 <h3>${title} #${index + 1}</h3>
                 <p class="card-desc" style="font-size: 13px; color: #bbb; margin-bottom: 10px; height: 40px; overflow: hidden;">${desc}</p>
-                <button onclick="handleAction('${videoLink}')" class="watch-btn">
+                <button onclick="handleSmartAction('${cardId}', '${videoLink}')" class="watch-btn">
                    <i class="fas fa-play"></i> شاهد الفيديو الآن
                 </button>
             </div>
@@ -86,17 +93,17 @@ function initApp() {
     });
 }
 
-// دالة التحكم الذكي: تفتح الإعلان في ضغطة والفيديو في ضغطة
-let adCounter = 0;
-function handleAction(videoUrl) {
-    if (adCounter % 2 === 0) {
-        // الضغطة الأولى تفتح الإعلان في نافذة جديدة
+// دالة التحكم الذكي: تجبر الزائر على فتح إعلان "لكل خانة" بشكل منفصل
+function handleSmartAction(id, videoUrl) {
+    if (cardTrackers[id] % 2 === 0) {
+        // إذا كانت النقرة الأولى على "هذه الخانة تحديداً" -> افتح إعلان
         window.open(AD_URL, '_blank');
     } else {
-        // الضغطة الثانية تفتح رابط الفيديو
+        // إذا كانت النقرة الثانية على "نفس الخانة" -> افتح الفيديو
         window.open(videoUrl, '_blank');
     }
-    adCounter++;
+    // زيادة العداد الخاص بهذه الخانة فقط لضمان تكرار العملية مع بقية الخانات
+    cardTrackers[id]++;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -107,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function spawnChat() {
     const chat = document.createElement('div');
     chat.className = 'neon-chat';
+    // الشات يفتح دائماً إعلان لزيادة الربح
     chat.onclick = () => window.open(AD_URL, '_blank');
     chat.innerHTML = `
         <div class="chat-user">
